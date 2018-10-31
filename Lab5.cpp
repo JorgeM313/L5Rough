@@ -7,9 +7,7 @@
 
 using namespace std;
 const int SIZE = 5;
-int array[SIZE];
-
-void promptUser()
+void promptUser(int array[])
 {
   cout << "Please enter values for your array of five integers: ";
   cin >> array[0];
@@ -28,16 +26,18 @@ void promptUser()
 void Sum(int array[], int & result)
 {
   result = array[0] + array[1] + array[2] + array[3] + array[4];
+  cout << "The sum of your array is " << result << endl;
 }
 
 int main()
 {
+  int array[SIZE];
   int choice = 0;
+  int result;
   cout << "Welcome to the Arrays Lab" << endl;
   cout << endl;
-  Sum(arr, sum_answer);
   do {
-  promptUser();
+  promptUser(array);
   cout << "Choose what you would like to do with this array: " << endl;
   cout << "1.Sum \n";
   cout << "2.Mean \n";
@@ -50,13 +50,13 @@ int main()
   cin >> choice;
   if (choice == 1)
   {
-    Sum(array[], result);
+    Sum(array,result);
   }
   if (choice == 8)
   {
     return 0;
   }
-}
 while (choice == 7);
+}
 return 0;
 }
